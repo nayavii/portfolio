@@ -66,7 +66,7 @@ const SocialIconList = styled.ul`
 const SocialItem = styled.li`
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 15px;
 `;
 
 const SocialLink = styled.a``;

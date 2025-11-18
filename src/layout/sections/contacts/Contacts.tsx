@@ -39,6 +39,11 @@ const StyledForm = styled.form`
   flex-direction: column;
   gap: 25px;
   margin: 0 auto;
+
+  textarea {
+    height: 165px;
+    resize: none;
+  }
 `;
 
 const Label = styled.label`
@@ -54,16 +59,12 @@ const Field = styled.input`
   background-color: transparent;
   border: 1px solid ${theme.colors.accent};
   border-radius: 6px;
-
-  &:not([type]) {
-    height: 165px;
-    resize: none;
-  }
+  color: ${theme.colors.text};
 
   &::placeholder {
     font-weight: 300;
     font-size: 13px;
-    color: ${theme.colors.accent};
+    color: #474153;
   }
 `;
 
