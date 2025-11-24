@@ -3,7 +3,7 @@ import { theme } from "./Theme";
 type CommonFontPropsType = {
   weight?: number;
   color?: string;
-  lineHeight?: number;
+  lineHeight?: number | string;
   FmaxSize?: number;
   FminSize?: number;
 };
