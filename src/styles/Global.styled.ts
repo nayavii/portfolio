@@ -27,14 +27,16 @@ export const GlobalStyle = createGlobalStyle`
 
   section {
     padding-top: 130px;
+
+    @media ${theme.media.mobile} {
+      padding-top: 100px;
+    }
   }
 
   h3 {
     font-weight: 500;
     font-size: 20px;
     text-transform: uppercase;
-
-
   }
 
   a { 
