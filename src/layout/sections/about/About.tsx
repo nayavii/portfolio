@@ -3,6 +3,7 @@ import { SectionTitle } from "../../../components/SectionTitle";
 import styled from "styled-components";
 import { theme } from "../../../styles/Theme";
 import { FlexWrapper } from "../../../components/FlexWrapper";
+import { font } from "../../../styles/Common";
 
 export const About = () => {
   return (
@@ -11,8 +12,8 @@ export const About = () => {
         <FlexWrapper justify="space-between" gap="20px">
           <Photo></Photo>
           <ContentWrapper>
-        <SectionTitle>About me</SectionTitle>
-            <FlexWrapper gap="12px">
+            <SectionTitle>About me</SectionTitle>
+            <FlexWrapper gap="12px" wrap="wrap">
               <Language>Russian - Native</Language>
               <Language>English - B2</Language>
               <Language>Spanish - B2</Language>
@@ -33,12 +34,24 @@ export const About = () => {
   );
 };
 
-const StyledAbout = styled.section``;
+const StyledAbout = styled.section`
+  @media ${theme.media.tablet} {
+    ${FlexWrapper}:first-child {
+      flex-direction: column;
+      justify-content: center;
+    }
+  }
+`;
 
 const Photo = styled.div`
-  background-color: aliceblue;
+  background-color: #ec8fff;
   min-width: 300px;
   min-height: 200px;
+
+  @media ${theme.media.tablet} {
+    margin: 0 auto;
+    min-height: 300px;
+  }
 `;
 
 const ContentWrapper = styled.div`
@@ -56,21 +69,25 @@ const ContentWrapper = styled.div`
     width: 5px;
     border-radius: 2px;
     background: ${theme.colors.gradient};
+
+    @media ${theme.media.mobile} {
+      height: 85%;
+    }
+  }
+
+  @media ${theme.media.mobile} {
+    padding-left: 16px;
   }
 `;
 const Language = styled.span`
-  font-size: 12px;
+  ${font({ FmaxSize: 12, FminSize: 10, color: theme.colors.bg })}
   padding: 8px 16px;
   background: ${theme.colors.gradient};
   border-radius: 6px;
-  color: ${theme.colors.bg};
- 
 `;
 
 const Description = styled.p`
-  /* width: 843px; */
-  font-size: 18px;
+  font-size: 16px;
   line-height: 26px;
-  letter-spacing: 4%;
   margin-top: 15px;
 `;
