@@ -1,23 +1,23 @@
-import styled from "styled-components";
 import { FlexWrapper } from "../../../components/FlexWrapper";
 import { SectionTitle } from "../../../components/SectionTitle";
 import { Project } from "./project/Project";
 import { Menu } from "../../../components/menu/Menu";
 import { Container } from "../../../components/Container";
-import { theme } from "../../../styles/Theme";
 import { projects } from "./projectsData";
 import projectImage from "../../../assets/images/project_image.png";
+import React from "react";
+import { S } from "./Projects_Styles";
 
 const tabsName = projects.map((item) => item.category);
 
-export const Projects = () => {
+export const Projects: React.FC = () => {
   return (
-    <StyledProjects>
+    <S.Projects>
       <Container>
         <SectionTitle>Projects</SectionTitle>
-        <MenuWrraper>
+        <S.MenuWrapper>
           <Menu menuItems={["All", ...tabsName]} justify="center" gap="40px" />
-        </MenuWrraper>
+        </S.MenuWrapper>
 
         <FlexWrapper justify="space-between" wrap="wrap" gap="20px">
           {projects.map((item, index) => (
@@ -31,17 +31,7 @@ export const Projects = () => {
           ))}
         </FlexWrapper>
       </Container>
-    </StyledProjects>
+    </S.Projects>
   );
 };
 
-const StyledProjects = styled.section``;
-
-const MenuWrraper = styled.div`
-  margin-bottom: 25px;
-
-  ul li a {
-    color: ${theme.colors.text};
-    font-weight: 400;
-  }
-`;

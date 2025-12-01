@@ -23,13 +23,15 @@ export const GlobalStyle = createGlobalStyle`
     font-weight: 400;
     font-size: 16px;
     line-height: 1.2;
+
+    min-width: 414px;
   }
 
   section {
     padding-top: 130px;
 
     @media ${theme.media.mobile} {
-      padding-top: 100px;
+      padding-top: 80px;
     }
   }
 

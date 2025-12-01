@@ -1,41 +1,38 @@
 import { SectionTitle } from "../../../components/SectionTitle";
 import { FlexWrapper } from "../../../components/FlexWrapper";
-import styled from "styled-components";
 import { Skill } from "./skill/Skill";
 import { Container } from "../../../components/Container";
-import { theme } from "../../../styles/Theme";
+import { S } from "./Skills_Styles";
+import React from "react";
 
-export const Skills = () => {
+const skillsData = [
+  { iconId: "javascriptSvg", title: "javascript" },
+  { iconId: "typescriptSvg", title: "typescript" },
+  { iconId: "mongoSvg", title: "mongo bd" },
+  { iconId: "postgresqlSvg", title: "postgresql" },
+  { iconId: "jestSvg", title: "jest" },
+  { iconId: "nestjsSvg", title: "nest js" },
+  { iconId: "dockerSvg", title: "docker" },
+  { iconId: "reactjsSvg", title: "react js" },
+  { iconId: "reactnativeSvg", title: "react native" },
+  { iconId: "styledcomponentSvg", title: "styled component" },
+  { iconId: "reduxSvg", title: "redux" },
+  { iconId: "gitSvg", title: "git" },
+];
+
+export const Skills: React.FC = () => {
   return (
-    <StyledSkills>
+    <S.Skills>
       <Container>
         <SectionTitle>Skills</SectionTitle>
         <FlexWrapper wrap="wrap" justify="space-between" gap="60px 150px">
-          <Skill iconId="javascriptSvg" title="javascript" />
-          <Skill iconId="typescriptSvg" title="typescript" />
-          <Skill iconId="mongoSvg" title="mongo bd" />
-          <Skill iconId="postgresqlSvg" title="postgresql" />
-          <Skill iconId="jestSvg" title="jest" />
-          <Skill iconId="expressSvg" title="express" />
-          <Skill iconId="nestjsSvg" title="nest js" />
-          <Skill iconId="dockerSvg" title="dockerSvg" />
-          <Skill iconId="reactjsSvg" title="react js" />
-          <Skill iconId="reactnativeSvg" title="react native" />
-          <Skill iconId="styledcomponentSvg" title="styled component" />
-          <Skill iconId="reduxSvg" title="redux" />
-          <Skill iconId="gitSvg" title="git" />
+          {skillsData.map(({ iconId, title }, index) => (
+            <Skill key={index} iconId={iconId} title={title} />
+          ))}
         </FlexWrapper>
       </Container>
-    </StyledSkills>
+    </S.Skills>
   );
 };
 
-const StyledSkills = styled.section`
-  @media ${theme.media.large} {
 
-    ${FlexWrapper} {
-      gap: 80px 45px;
-      justify-content: center;
-    }
-  }
-`;

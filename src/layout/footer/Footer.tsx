@@ -1,100 +1,42 @@
-import styled from "styled-components";
+import React from "react";
 import { Icon } from "../../components/icon/Icon";
 import { Menu } from "../../components/menu/Menu";
-import { theme } from "../../styles/Theme";
+import { S } from "./Footer_Styles";
 
-export const Footer = () => {
+const socialLinks = [
+  { id: "gmailSvg", title: "gmail", href: "#" },
+  {
+    id: "linkedinSvg",
+    title: "linkedIn",
+    href: "https://www.linkedin.com/in/alesikhanna",
+  },
+  { id: "githubSvg", title: "github", href: "https://github.com/nayavii" },
+];
+
+const menuItems = ["Projects", "Contact"];
+
+export const Footer: React.FC = () => {
   return (
-    <StyledFooter>
-      <SocialIconList>
-        <SocialItem>
-          <SocialLink>
-            <Icon
-              iconId="gmailSvg"
-              width="38px"
-              height="38px"
-              viewBox="0 0 38 38"
-            />
-          </SocialLink>
-          <SocialTitleLink>gmail</SocialTitleLink>
-        </SocialItem>
-
-        <SocialItem>
-          <SocialLink>
-            <Icon
-              iconId="linkedinSvg"
-              width="38px"
-              height="38px"
-              viewBox="0 0 38 38"
-            />
-          </SocialLink>
-          <SocialTitleLink>linkedIn</SocialTitleLink>
-        </SocialItem>
-
-        <SocialItem>
-          <SocialLink>
-            <Icon
-              iconId="githubSvg"
-              width="38px"
-              height="38px"
-              viewBox="0 0 38 38"
-            />
-          </SocialLink>
-          <SocialTitleLink href="https://github.com/nayavii" target="_blank">
-            github
-          </SocialTitleLink>
-        </SocialItem>
-      </SocialIconList>
-      <Menu menuItems={["Projects", "Contact"]} justify="center" gap="48px" />
-      <Copyright>© 2025 Hanna Alesik. All Rights Reserved.</Copyright>
-    </StyledFooter>
+    <S.Footer>
+      <S.SocialIconList>
+        {socialLinks.map(({ id, title, href }, index) => {
+          return (
+            <S.SocialItem key={index}>
+              <S.SocialLink href={href} target="_blank">
+                <Icon
+                  iconId={id}
+                  width="38px"
+                  height="38px"
+                  viewBox="0 0 38 38"
+                />
+              </S.SocialLink>
+              <S.SocialTitleLink>{title}</S.SocialTitleLink>
+            </S.SocialItem>
+          );
+        })}
+      </S.SocialIconList>
+      <Menu menuItems={menuItems} justify="center" gap="48px" />
+      <S.Copyright>© 2025 Hanna Alesik. All Rights Reserved.</S.Copyright>
+    </S.Footer>
   );
 };
-
-const StyledFooter = styled.footer`
-  padding-bottom: 100px;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  gap: 45px;
-`;
-
-const SocialIconList = styled.ul`
-  display: flex;
-  gap: 76px;
-  justify-content: center;
-  align-items: center;
-
-  @media ${theme.media.mobile} {
-    gap: 45px;
-  }
-`;
-
-const SocialItem = styled.li`
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-`;
-
-const SocialLink = styled.a``;
-
-const SocialTitleLink = styled.a`
-  font-size: 12px;
-  line-height: 11.11px;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  cursor: pointer;
-`;
-
-const Copyright = styled.small`
-  font-size: 14px;
-  line-height: 26px;
-  text-align: center;
-  letter-spacing: 0.1em;
-
-      @media ${theme.media.mobile} {
-
-      font-size: 12px;
-    
-  }
-`;

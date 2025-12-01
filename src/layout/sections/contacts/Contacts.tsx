@@ -1,83 +1,30 @@
-import styled from "styled-components";
 import { SectionTitle } from "../../../components/SectionTitle";
 import { Container } from "../../../components/Container";
-import { theme } from "../../../styles/Theme";
+import React from "react";
+import { S } from "./Contscts_Styles";
 
-export const Contacts = () => {
+export const Contacts: React.FC = () => {
   return (
-    <StyledContacts>
+    <S.Contacts>
       <Container>
         <SectionTitle>Contacts</SectionTitle>
-        <StyledForm>
-          <Label>
+        <S.Form>
+          <S.Label>
             Name
-            <Field type="text" placeholder="Name" />
-          </Label>
-          <Label>
+            <S.Field type="text" placeholder="Name" />
+          </S.Label>
+          <S.Label>
             Email
-            <Field type="email" placeholder="Email" />
-          </Label>
-          <Label>
+            <S.Field type="email" placeholder="Email" />
+          </S.Label>
+          <S.Label>
             Mensaje
-            <Field as={"textarea"} placeholder="Hi, i will ..." />
-          </Label>
-          <FormButton type="submit">Submit</FormButton>
-        </StyledForm>
+            <S.Field as={"textarea"} placeholder="Hi, i will ..." />
+          </S.Label>
+          <S.FormButton type="submit">Submit</S.FormButton>
+        </S.Form>
       </Container>
-    </StyledContacts>
+    </S.Contacts>
   );
 };
 
-const StyledContacts = styled.section`
-  padding-bottom: 190px;
-`;
-
-const StyledForm = styled.form`
-  max-width: 532px;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 25px;
-  margin: 0 auto;
-
-  textarea {
-    height: 165px;
-    resize: none;
-  }
-`;
-
-const Label = styled.label`
-  font-size: 15px;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  color: ${theme.colors.text};
-`;
-
-const Field = styled.input`
-  padding: 16px 0px 16px 18px;
-  background-color: transparent;
-  border: 1px solid ${theme.colors.accent};
-  border-radius: 6px;
-  color: ${theme.colors.text};
-
-  &::placeholder {
-    font-weight: 300;
-    font-size: 13px;
-    color: #8c819f;
-  }
-`;
-
-const FormButton = styled.button`
-  background: ${theme.colors.gradient};
-  padding: 14px 0;
-  border-radius: 6px;
-  color: ${theme.colors.bg};
-  font-weight: 500;
-  font-family: inherit;
-  cursor: pointer;
-
-  &:hover {
-    opacity: 0.65;
-  }
-`;
