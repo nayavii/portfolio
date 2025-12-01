@@ -4,7 +4,6 @@ import { Project } from "./project/Project";
 import { Menu } from "../../../components/menu/Menu";
 import { Container } from "../../../components/Container";
 import { projects } from "./projectsData";
-import projectImage from "../../../assets/images/project_image.png";
 import React from "react";
 import { S } from "./Projects_Styles";
 
@@ -25,7 +24,7 @@ export const Projects: React.FC = () => {
               key={index}
               title={item.title}
               tags={item.tags}
-              imageSrc={projectImage}
+              imageSrc={item.projectImage}
               description={item.description}
             />
           ))}
