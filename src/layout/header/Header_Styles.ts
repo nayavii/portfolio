@@ -8,6 +8,7 @@ const Header = styled.header`
   left: 0;
   right: 0;
   background-color: ${theme.colors.bg};
+  z-index: 1000;
 `;
 
 export const S = {

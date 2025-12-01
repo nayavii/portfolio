@@ -35,7 +35,11 @@ const Content = styled.div`
 `;
 
 const MainTitle = styled.h1`
-  ${font({ weight: 400, FmaxSize: 20, FminSize: 16 })}
+  ${font({ weight: 400, FmaxSize: 20, FminSize: 16 })};
+
+  p {
+    display: none;
+  }
 `;
 
 const Title = styled.h3`

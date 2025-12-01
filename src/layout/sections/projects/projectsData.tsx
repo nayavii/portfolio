@@ -19,4 +19,36 @@ export const projects = [
     description:
       "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.",
   },
+    {
+    category: "Landing page",
+    title: "TITLE PROJECT 3",
+    projectImage: projectImage1,
+    tags: ["React", "TypeScript", "CSS"],
+    description:
+      "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.",
+  },
+    {
+    category: "React",
+    title: "TITLE PROJECT 4",
+    projectImage: projectImage1,
+    tags: ["React", "TypeScript", "CSS"],
+    description:
+      "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.",
+  },
+    {
+    category: "Spa",
+    title: "TITLE PROJECT 5",
+    projectImage: projectImage1,
+    tags: ["React", "TypeScript", "CSS"],
+    description:
+      "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.",
+  },
+    {
+    category: "Landing page",
+    title: "TITLE PROJECT 6",
+    projectImage: projectImage1,
+    tags: ["React", "TypeScript", "CSS"],
+    description:
+      "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.",
+  },
 ];

@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { theme } from "../../styles/Theme";
 
 const Menu = styled.nav<{ justify?: string; gap?: string }>`
@@ -12,7 +12,7 @@ const Menu = styled.nav<{ justify?: string; gap?: string }>`
   }
 `;
 
-const ListItem = styled.li`
+const ListItem = styled.li<{ active?: boolean }>`
   position: relative;
 
   &::before {
@@ -25,6 +25,12 @@ const ListItem = styled.li`
     height: 2px;
     background: ${theme.colors.gradient};
     transition: width 0.3s ease;
+
+    ${(props) =>
+      props.active &&
+      css<{ active?: boolean }>`
+        width: 100%;
+      `}
   }
 
   &:hover::before {
@@ -41,4 +47,4 @@ export const S = {
   Menu,
   ListItem,
   Link,
-}
+};

@@ -14,14 +14,17 @@ const MenuWrapper = styled.div`
 
 // Project styles
 
-const Project = styled.div`
-  width: 520px;
-  height: 100%;
-  background-color: ${theme.colors.cardBg};
+const ProjectWrapper = styled.div`
+  flex: 0 0 auto;
+  padding: 0 10px;
+  width: 100%;
+  max-width: 520px;
+`;
 
-  @media ${theme.media.mobile} {
-    width: 100%;
-  }
+const Project = styled.div`
+  width: 100%;
+  background-color: ${theme.colors.cardBg};
+  height: 100%;
 `;
 
 const ContentWrapper = styled.div`
@@ -34,12 +37,9 @@ const ContentWrapper = styled.div`
 
 const Image = styled.img`
   width: 100%;
-  height: 390px;
+  height: auto;
+  max-height: 390px;
   object-fit: cover;
-
-  @media ${theme.media.mobile} {
-    height: 290px;
-  }
 `;
 
 const Title = styled.h3``;
@@ -57,6 +57,7 @@ const Tag = styled.span`
 `;
 
 const Description = styled.p`
+ width: 100%;
   font-weight: 400;
   line-height: 24px;
   letter-spacing: 4%;
@@ -72,4 +73,5 @@ export const S = {
   Title,
   Tag,
   Description,
+  ProjectWrapper,
 };

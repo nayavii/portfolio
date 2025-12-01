@@ -5,6 +5,7 @@ import { Container } from "../../../components/Container";
 import { S } from "./Main_Styles";
 import React from "react";
 import foto from "../../../assets/images/main_photo.png";
+import Typewriter from "typewriter-effect";
 
 export const Main: React.FC = () => {
   return (
@@ -12,7 +13,17 @@ export const Main: React.FC = () => {
       <Container>
         <FlexWrapper justify="space-between" wrap="wrap" align="center">
           <S.Content>
-            <S.MainTitle>WEB DEVELOPER</S.MainTitle>
+            <S.MainTitle>
+              <p>FRONTEND DEVELOPER, WEB DESIGNER</p>
+              <Typewriter
+                options={{
+                  strings: ["FRONTEND DEVELOPER", "WEB DESIGNER", "AND A GOOD PERSON"],
+                  autoStart: true,
+                  loop: true,
+                  delay: 50,
+                }}
+              />
+            </S.MainTitle>
             <S.Title>Hanna Alesik</S.Title>
             <S.Description>
               Blending structured design, clean logic and subtle visual depth
