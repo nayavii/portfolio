@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import { theme } from "../../../styles/Theme";
 import { font } from "../../../styles/Common";
 import { FlexWrapper } from "../../../components/FlexWrapper";
@@ -80,10 +80,18 @@ const Photo = styled.img`
   }
 `;
 
+const bounce = keyframes`
+  0% { transform: translateY(0); }
+  40% { transform: translateY(6px); }
+  100% { transform: translateY(0); }
+`;
+
 const IconWrapper = styled(Link)`
   display: block;
   text-align: center;
   margin-top: 100px;
+  animation: ${bounce} 2s ease-in-out infinite;
+  animation-delay: 0.4s;
 
   @media ${theme.media.large} {
     margin-top: 0;
